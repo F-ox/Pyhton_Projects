@@ -1,2 +1,1 @@
-# Pyhton_Projects
-Treehouse Pyhton Projects
+This is my first project for TreeHouse, a number guessing name :)
