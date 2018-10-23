@@ -13,7 +13,7 @@ def start_game():
   
   try:
     name= input("What's your name? ")
-    print("Hi {}, my name is HAL 9000 *beep* *boop*. \n I am thinking of a number between 1 and 10, can you guess which number it is? *beep* *boop*? \n...Are your ready?".format(name))
+    print("Hi {}, my name is HAL 9000 *beep* *boop*. \n I am thinking of a number between 1 and 10, can you guess which number it is? *beep* *boop*? \n Each attempt scores 1, the lower the score, the better! \n...Are your ready?".format(name))
   except NameError:
     print("Oops, this is not a correct name:)")
     name= input("What's your name? ")
@@ -45,7 +45,7 @@ def start_game():
 
   if guess == answer:
     print("You got it! {}, is the correct answer *beep* *boop*!".format(answer))
-    print("Tries: {}".format(attempts))
+    print("Score: {}".format(attempts))
     try:
       try_again = input("Would you like to play again? (Y/N): ")
     except ValueError:
