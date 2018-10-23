@@ -11,6 +11,7 @@ def start_game():
     name= input("What's your name? ")
 
   import random
+  import sys
   from random import randrange
 
   attempts = 1
@@ -45,15 +46,18 @@ def start_game():
   if guess == answer:
     print("You got it! {}, is the correct answer *beep* *boop*!".format(answer))
     print("Tries: {}".format(attempts))
-   
-    try_again = input("Would you like to play again? (Y/N): ")
-      
-    if try_again == "Y":
-      start_game()    
-    if try_again == "N":
-      print("No worries, See you later {}!".format(name))
-    else:
-      print("Oops,this is not a correct command, please type Y for yes or N for no :)")
+    try:
       try_again = input("Would you like to play again? (Y/N): ")
+    except ValueError:
+      print("Oops,this is not a correct command, please type Y for yes or N for no :)")
+    except NameError:
+      print("Oops,this is not a correct command, please type Y for yes or N for no :)")
+    else:
+      if try_again == "Y":
+        start_game()    
+      if try_again == "N":
+        print("No worries, See you later {}!".format(name))
+        sys.exit()
+
       
 start_game()
